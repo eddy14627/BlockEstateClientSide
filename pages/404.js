@@ -4,7 +4,7 @@ import Link from "next/link";
 //INTERNAL IMPORT
 import { Header, Footer, Copyright } from "../PageComponents/Components";
 
-const pageNotFound = () => {
+const PageNotFound = () => {
   return (
     <div class="template-color-1 nft-body-connect">
       <Header />
@@ -143,4 +143,4 @@ const pageNotFound = () => {
   );
 };
 
-export default pageNotFound;
+export default PageNotFound;

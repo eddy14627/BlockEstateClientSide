@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Header, Footer, Copyright } from "../PageComponents/Components";
 import { Banner, Action, Quote, Statistick } from "../PageComponents/AboutPage";
 
-const about = () => {
+const About = () => {
   return (
     <div class="template-color-1 nft-body-connect">
       <Header />
@@ -18,4 +18,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default About;
