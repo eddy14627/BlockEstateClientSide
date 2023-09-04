@@ -1,14 +1,8 @@
 import React from "react";
-
+import Link from "next/link";
 //INTERNAL IMPORT
 import { Header, Footer, Copyright } from "../PageComponents/Components";
-import {
-  Banner,
-  Action,
-  Blog,
-  Quote,
-  Statistick,
-} from "../PageComponents/AboutPage";
+import { Banner, Action, Quote, Statistick } from "../PageComponents/AboutPage";
 
 const about = () => {
   return (
@@ -16,7 +10,6 @@ const about = () => {
       <Header />
       <Banner />
       <Action />
-      <Blog />
       <Quote />
       <Statistick />
       <Footer />

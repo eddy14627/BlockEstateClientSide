@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import Link from "next/link";
 //INTERNAL IMPORT
 import { Activity } from "../PageComponents/ActivityPage";
 import { Header, Footer, Copyright } from "../PageComponents/Components";
