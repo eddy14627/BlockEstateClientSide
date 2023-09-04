@@ -8,7 +8,7 @@ const Collection = ({ category, isLoading }) => {
     <div class="rn-collection-area rn-section-gapTop">
       {isLoading ? (
         <Loader />
-      ) : category.length == 0 ? (
+      ) : category && category.length == 0 ? (
         <div class="container">
           <h1>No Properties</h1>
         </div>
