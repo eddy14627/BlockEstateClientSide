@@ -187,37 +187,6 @@ const Header = () => {
                   </button>
                 </div>
               </div>
-
-              {/* <div id="my_switcher" class="my_switcher setting-option">
-                <ul>
-                  <li>
-                    <Link
-                      href="javascript: void(0);"
-                      data-theme="light"
-                      class="setColor light"
-                    >
-                      <img
-                        class="sun-image"
-                        src="/icons/sun-01.svg"
-                        alt="Sun images"
-                      />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="javascript: void(0);"
-                      data-theme="dark"
-                      class="setColor dark"
-                    >
-                      <img
-                        class="Victor Image"
-                        src="/icons/vector.svg"
-                        alt="Vector Images"
-                      />
-                    </Link>
-                  </li>
-                </ul>
-              </div> */}
             </div>
           </div>
         </div>
