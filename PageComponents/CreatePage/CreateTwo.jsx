@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ethers } from "ethers";
 import axios from "axios";
 import Link from "next/link";
@@ -7,6 +7,7 @@ import { Loader } from "../Components";
 import { CreateThree } from ".";
 import { useStateContext } from "../../context";
 import { checkIfImage } from "../../utils";
+import { useRouter } from "next/router";
 
 const categories = [
   "Housing",
@@ -18,14 +19,14 @@ const categories = [
 ];
 
 const CreateTwo = () => {
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
-  const [properties, setProperties] = useState([]);
+  const [imgHash, setImgHash] = useState("");
   const [file, setFile] = useState(null);
   const [diplayImg, setDiplayImg] = useState(null);
   const [fileName, setFileName] = useState("Upload Image");
 
-  const { address, contract, connect, createPropertyFunction } =
-    useStateContext();
+  const { address, createPropertyFunction } = useStateContext();
 
   const [form, setForm] = useState({
     propertyTitle: "",
@@ -42,16 +43,22 @@ const CreateTwo = () => {
 
   const handleSubmit = async () => {
     setIsLoading(true);
+    form.images = imgHash;
     checkIfImage(form.images, async (exists) => {
       if (exists) {
-        await createPropertyFunction({
-          ...form,
-          price: ethers.utils.parseUnits(form.price, 18),
-        });
-        setIsLoading(false);
+        if (imgHash) {
+          await createPropertyFunction({
+            ...form,
+            images: imgHash,
+            price: ethers.utils.parseUnits(form.price, 18),
+          });
+          setIsLoading(false);
+          router.push("/");
+        }
       } else {
         alert("Provide valid image URL");
         setForm({ ...form, images: "" });
+        setIsLoading(false);
       }
     });
   };
@@ -73,17 +80,19 @@ const CreateTwo = () => {
             "Content-Type ": "multipart/form-data",
           },
         });
-        const ImgHash = `https://gateway.pinata.cloud/ipfs/${response.data.IpfsHash}`;
-
-        console.log(ImgHash);
-        setForm({ ...form, images: ImgHash });
+        const imghash = `https://gateway.pinata.cloud/ipfs/${response.data.IpfsHash}`;
+        setImgHash(imghash);
+        console.log(imgHash);
         setFileName("Image Uploaded");
-        return ImgHash;
+        return imgHash;
       } catch (error) {
         alert("Unable to upload image to Pinata");
+        return null;
       }
     }
+    return null;
   };
+
   const retrieveFile = (event) => {
     const data = event.target.files[0];
 
@@ -140,7 +149,7 @@ const CreateTwo = () => {
                     onClick={() => uploadToPinata()}
                     class="btn btn-primary-alta btn-large"
                   >
-                    {fileName}
+                    <button>{fileName}</button>
                   </Link>
                 )}
               </div>
@@ -263,7 +272,7 @@ const CreateTwo = () => {
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-12">
+                  {/* <div class="col-lg-12">
                     <div class="BlockEstate-information mb--30">
                       <div class="single-notice-setting">
                         <div class="input">
@@ -282,7 +291,7 @@ const CreateTwo = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                   <div class="col-lg-12">
                     <div class="button-wrapper">
                       <Link
@@ -308,6 +317,7 @@ const CreateTwo = () => {
           </div>
         </div>
       </div>
+
       <CreateThree data={form} />
     </>
   );

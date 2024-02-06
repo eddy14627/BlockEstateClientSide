@@ -14,7 +14,7 @@ const App = ({ Component, pageProps }) => {
         </StateContextProvider>
       </ThirdwebProvider>
 
-      {/* <Script src="/js/vendor/jquery.js" strategy="beforeInteractive" />
+      <Script src="/js/vendor/jquery.js" strategy="beforeInteractive" />
       <Script
         src="/js/vendor/jquery.nice-select.min.js"
         strategy="beforeInteractive"
@@ -33,9 +33,9 @@ const App = ({ Component, pageProps }) => {
       <Script src="/js/vendor/js.cookie.js" strategy="beforeInteractive" />
       <Script src="/js/vendor/count-down.js" strategy="beforeInteractive" />
       <Script src="/js/vendor/isotop.js" strategy="beforeInteractive" />
-      <Script src="/js/vendor/imageloaded.js" strategy="beforeInteractive" /> */}
-      {/* {/* <Script src="/js/vendor/backtoTop.js" strategy="beforeInteractive" /  */}
-      {/* <Script src="/js/vendor/odometer.js" strategy="beforeInteractive" />
+      <Script src="/js/vendor/imageloaded.js" strategy="beforeInteractive" />
+      <Script src="/js/vendor/backtoTop.js" strategy="beforeInteractive" />
+      <Script src="/js/vendor/odometer.js" strategy="beforeInteractive" />
       <Script src="/js/vendor/jquery-appear.js" strategy="beforeInteractive" />
       <Script src="/js/vendor/scrolltrigger.js" strategy="beforeInteractive" />
       <Script
@@ -49,7 +49,7 @@ const App = ({ Component, pageProps }) => {
 
       <Script src="/js/vendor/web3.min.js" strategy="beforeInteractive" />
       <Script src="/js/vendor/maralis.js" strategy="beforeInteractive" />
-      <Script src="/js/vendor/nft.js" strategy="beforeInteractive" /> */}
+      <Script src="/js/vendor/nft.js" strategy="beforeInteractive" />
     </>
   );
 };
