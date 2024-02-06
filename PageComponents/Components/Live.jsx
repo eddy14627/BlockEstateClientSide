@@ -1,11 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHome,
-  faBitcoin,
-  faArrowRight,
-} from "@fortawesome/free-solid-svg-icons";
+import { faHome, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Loader from "./Loader/Loader";
 
 const Live = ({ properties, isLoading }) => {
@@ -32,7 +28,7 @@ const Live = ({ properties, isLoading }) => {
             properties
               .map((property, idx) => (
                 <div
-                  key={idx + 1}
+                  key={idx + 2}
                   className="col-5 col-lg-4 col-md-6 col-sm-6 col-12"
                 >
                   <div className="product-style-one">
@@ -88,7 +84,7 @@ const Live = ({ properties, isLoading }) => {
                   </div>
                 </div>
               ))
-              .slice(Math.max(0, n - 6), n)
+              .slice(Math.max(0, n - 5), n)
           )}
         </div>
         {/* Button to show all properties */}

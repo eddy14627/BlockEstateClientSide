@@ -96,7 +96,6 @@ const Update = () => {
           productId: query.property * 1,
         });
         setIsLoading(false);
-        router.push("/");
       } else {
         alert("Provide valid image URL");
         setForm({ ...form, images: "" });
@@ -260,69 +259,6 @@ const Update = () => {
                       </div>
                     </div>
                   </div>
-                  {/* <div class="col-lg-12">
-                    <div class="collection-single-wized">
-                      <label class="title">Category</label>
-                      <div class="create-collection-input">
-                        <div class="nice-select mb--30" tabindex="0">
-                          <span class="current">Add Category</span>
-                          <ul class="list">
-                            {categories.map((el, i) => (
-                              <li
-                                key={i + 1}
-                                onClick={() =>
-                                  setForm({
-                                    ...form,
-                                    category: el,
-                                  })
-                                }
-                                data-value="Housing"
-                                class="option"
-                              >
-                                {el}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="collection-single-wized">
-                      <label className="title">Category</label>
-                      <div className="create-collection-input">
-                        <select
-                          className="form-select mb--30"
-                          value={form.category}
-                          onChange={(e) => handleFormFieldChange("category", e)}
-                        >
-                          <option value="">Select Category</option>
-                          {categories.map((el, i) => (
-                            <option key={i + 1} value={el}>
-                              {el}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-                    </div>
-                  </div> */}
-                  {/* <div className="col-lg-12">
-                    <div className="collection-single-wized">
-                      <label className="title">Category</label>
-                      <div className="create-collection-input">
-                        <select
-                          className="form-select mb--30"
-                          value={form.category}
-                          onChange={(e) => handleFormFieldChange("category", e)}
-                        >
-                          <option value="">Select Category</option>
-                          {categories.map((el, i) => (
-                            <option key={i + 1} value={el}>
-                              {el}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-                    </div>
-                  </div> */}
                   <div className="collection-single-wized">
                     <label className="title">Category</label>
                     <div className="create-collection-input">
@@ -371,34 +307,14 @@ const Update = () => {
                     </div>
                   </div>
                   <div class="col-lg-12">
-                    {/* <div class="BlockEstate-information mb--30">
-                      <div class="single-notice-setting">
-                        <div class="input">
-                          <input
-                            type="checkbox"
-                            id="themeSwitch"
-                            name="theme-switch"
-                            class="theme-switch__input"
-                          />
-                          <label for="themeSwitch" class="theme-switch__label">
-                            <span></span>
-                          </label>
-                        </div>
-                        <div class="content-text">
-                          <p>Explicit & sensitive content</p>
-                        </div>
-                      </div>
-                    </div> */}
-                  </div>
-                  <div class="col-lg-12">
                     <div class="button-wrapper">
-                      <Link
-                        href="#"
+                      <button
                         onClick={() => handleSubmit()}
-                        class="btn btn-primary-alta btn-large"
+                        className="btn btn-primary-alta btn-large"
+                        type="button" // Add type attribute to prevent default form submission
                       >
                         {isLoading ? <Loader /> : "Update"}
-                      </Link>
+                      </button>
                     </div>
                   </div>
                 </div>

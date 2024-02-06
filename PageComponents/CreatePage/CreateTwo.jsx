@@ -53,7 +53,6 @@ const CreateTwo = () => {
             price: ethers.utils.parseUnits(form.price, 18),
           });
           setIsLoading(false);
-          router.push("/");
         }
       } else {
         alert("Provide valid image URL");
@@ -82,7 +81,6 @@ const CreateTwo = () => {
         });
         const imghash = `https://gateway.pinata.cloud/ipfs/${response.data.IpfsHash}`;
         setImgHash(imghash);
-        console.log(imgHash);
         setFileName("Image Uploaded");
         return imgHash;
       } catch (error) {
@@ -272,38 +270,11 @@ const CreateTwo = () => {
                       </div>
                     </div>
                   </div>
-                  {/* <div class="col-lg-12">
-                    <div class="BlockEstate-information mb--30">
-                      <div class="single-notice-setting">
-                        <div class="input">
-                          <input
-                            type="checkbox"
-                            id="themeSwitch"
-                            name="theme-switch"
-                            class="theme-switch__input"
-                          />
-                          <label for="themeSwitch" class="theme-switch__label">
-                            <span></span>
-                          </label>
-                        </div>
-                        <div class="content-text">
-                          <p>Explicit & sensitive content</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div> */}
+
                   <div class="col-lg-12">
                     <div class="button-wrapper">
                       <Link
-                        href="#"
-                        class="btn btn-primary btn-large mr--30"
-                        data-bs-toggle="modal"
-                        data-bs-target="#collectionModal"
-                      >
-                        Preview
-                      </Link>
-                      <Link
-                        href="#"
+                        href=""
                         onClick={() => handleSubmit()}
                         class="btn btn-primary-alta btn-large"
                       >
